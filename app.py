@@ -4,7 +4,7 @@ import uuid
 import os
 from os.path import join, dirname
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
 bootstrap = Bootstrap(app)
 
 @app.route('/')
