@@ -44,13 +44,13 @@
 
     liff
       .init({
-        liffId: "1653874015-ZnDvWG4y"
+        liffId: YOUR_LIFF_ID
       })
       .then(() => {
         if (!liff.isInClient()) {
           if (!liff.isLoggedIn()) {
             liff.login({
-              redirectUri: "https://liff-stp.herokuapp.com/"
+              redirectUri: YOUR_REDIRECT_URL
             })
           }
         }
@@ -60,24 +60,9 @@
         //document.getElementById("liffInitErrorMessage").classList.remove('hidden');
       });
 
-    $('#btn__').on('click', function() {
-      alert('hoge')
-      liff.shareTargetPicker([{
-          type: "text",
-          text: "this is a test"
-        }])
-        .then(
-          alert("ShareTargetPicker was launched")
-        ).catch(function(res) {
-          alert("Failed to launch ShareTargetPicker")
-        })
-    });
-
     let min;
 
     $('button.minute').on('click', function() {
-      //alert($(this).attr('name'))
-      //alert($(this).text() + "fuck")
       min = $(this).text()
     });
 
@@ -94,7 +79,6 @@
       } else {
         message = $(this).text()
       }
-      //alert(message)
 
       liff.shareTargetPicker([{
           type: "text",
